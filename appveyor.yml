@@ -22,10 +22,7 @@ install: |
   git submodule update --init --recursive
  
   if "%CUDA_VER%" == "11.6" set CUDA_ARCHIVE=cuda_11.6.0_511.23_windows
- if NOT EXIST C:\CUDA\v%CUDA_VER% (if "%CUDA_VER%" == "11.6" curl -L https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda_11.6.0_511.23_windows.exe -o %CUDA_ARCHIVE%.exe)
-  
-  if NOT EXIST C:\CUDA mkdir C:\CUDA
-  
+  if NOT EXIST C:\CUDA\v%CUDA_VER% (if "%CUDA_VER%" == "11.6" curl -L https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda_11.6.0_511.23_windows.exe -o %CUDA_ARCHIVE%.exe)
   set PATH=C:\Python36-x64;C:\Python36-x64\Scripts;%PATH%;C:\CUDA\v%CUDA_VER%\bin
   pip install requests gitpython
   nvcc -V
