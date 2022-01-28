@@ -29,6 +29,7 @@ install: |
   if "%CUDA_VER%" == "8.0" set CUDA_ARCHIVE=cuda_8.0.61_windows-exe
   if "%CUDA_VER%" == "9.1" set CUDA_ARCHIVE=cuda_9.1.85_windows
   if "%CUDA_VER%" == "10.0" set CUDA_ARCHIVE=cuda_10.0.130_411.31_windows
+  if "%CUDA_VER%" == "11.6" set CUDA_ARCHIVE=cuda_11.6.0_511.23_windows
   if NOT EXIST C:\CUDA\v%CUDA_VER% (if "%CUDA_VER%" NEQ "8.0" curl -L https://developer.nvidia.com/compute/cuda/%CUDA_VER%/Prod/local_installers/%CUDA_ARCHIVE% -o %CUDA_ARCHIVE%.exe)
   if NOT EXIST C:\CUDA\v%CUDA_VER% (if "%CUDA_VER%" == "8.0" curl -L https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_windows-exe -o %CUDA_ARCHIVE%.exe)
   if NOT EXIST C:\CUDA\v%CUDA_VER% (if "%CUDA_VER%" == "11.6" curl -L https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda_11.6.0_511.23_windows.exe -o %CUDA_ARCHIVE%.exe)
