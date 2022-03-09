@@ -71,6 +71,7 @@ artifacts:
   - path: build/ethminer-*.zip
     name: ethminer
 
+
 deploy:
   # Create GitHub release, also set the release name and description.
   provider: GitHub
